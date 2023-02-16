@@ -29,7 +29,7 @@ function shuffleCards() {
 
 function generateCards() {
     for(let card of cards){
-        cons cardElement = document.createElement("div")
+        const cardElement = document.createElement("div");
         cardElement.classlist.add("card");
         cardElement.setAttribute("data-name", card.name);
     }
