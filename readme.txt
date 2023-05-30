@@ -5,3 +5,5 @@ git push origin mabranche
 aller sur une nouvelle branche:
 
 git checkout -b kamronn
+
+git pull

@@ -1,19 +1,25 @@
-<html lang=""en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="XX-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Jeux de carte mémoire</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
-<body>
-    <h1>Carte Mémoire</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Card Game</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+      <audio id="correctSound" src="Correct Answer Sound Effect.mp3"></audio>
+      <audio id="incorrectSound" src="Wrong Answer Sound effect.mp3"></audio>
+      <audio id="VictorySound" src="Two Steps From Hell - Strength of a Thousand Men (Archangel).mp3"></audio>
+    <h1>Memory Cards</h1>
     <div class="grid-container">
     </div>
     <p>Score: <span class="score"></span></p>
     <div class="actions">
-        <button onclick="restart()">Recommencer</button>
+        <button onclick="restart()">Redemarrer</button>
+        <audio stop id="VictorySound" src="Two Steps From Hell - Strength of a Thousand Men (Archangel).mp3"></audio>
     </div>
+
     <script src="index.js"></script>
-</body>
+  </body>
 </html>

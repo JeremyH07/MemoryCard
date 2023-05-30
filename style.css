@@ -1,76 +1,100 @@
 body {
     min-height: 100vh;
     min-width: 100vh;
-    background-color:aqua;
-    color: red;
-}
+    background-color: #12181f;
+    color: white;
+  }
+  
+  h1 {
+      text-align: center;
+      font-weight: 700;
+      font-size: 50px;
+  }
+  
+  p {
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+  }
+  .intcard  { 
+    color: #72040d;
+    text-align: center;
+    background-image: url(Inde-p.png);
+  }
 
-h1 {
-    text-align:center;
-    font-weight:700;
-    font-size:50px;
-}
-p {
-    text-align:center;
-    font-weight:bold;
-    font-size:30px;
-}
-.actions {
-    display:flex;
+  .colorquiz  { 
+    color: rgb(38, 0, 255);
+    text-align: center;
+  }
+
+  .colorreponse {
+
+    color: rgb(255, 0, 0);  
+  }
+  
+  .actions {
+      display: flex;
+      justify-content: center;
+  }
+  
+  .actions button {
+      padding: 8px 16px;
+      font-size: 30px;
+      border-radius: 10px;
+      background-color: #27ae60;
+      color: white;
+  }
+  
+  .grid-container {
+    display: grid;
     justify-content: center;
-}
-.actions button {
-    padding:8px 16px;
-    font-size: 30px;
-    border-radius:10px;
-    background-color: green;
-    color: blue;
-}
-.grid-container {
-    display:grid;
-    justify-content: center;
-    grid-gap:16px;
+    grid-gap: 16px;
     grid-template-columns: repeat(6, 140px);
-    grid-template-rows: repeat(6, calc(140px / 2 *3));
-}
-.card {
-    height:calc(140px / 2 *3);
-    width: 140 px;
-    border-radius:10px;
+    grid-template-rows: repeat(2, calc(140px / 2 * 3));
+  }
+  
+  .card {
+    height: calc(140px / 2 * 3);
+    width: 140px;
+    border-radius: 10px;
     background-color: white;
     position: relative;
     transform-style: preserve-3d;
     transition: all 0.5s ease-in-out;
-}
-.front-image{
+  }
+  
+  .front-image {
     width: 60px;
     height: 60px;
-}
-.card.flipped{
+  }
+  
+  .card.flipped {
     transform: rotateY(180deg);
-}
-.front,
-.back{
-    backface-visibility: hidden;
-    position: absolute;
-    border-radius: 10px;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-}
-.card .font{
+  }
+  
+  .front, .back {
+      backface-visibility: hidden;
+      position: absolute;
+      border-radius: 10px;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+  }
+  
+  .card .front {
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: rotateY(180deg);
-}
-.card .back{
-    background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='16.591' height='26.667' patternTransform='scale(2) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0,0%,100%,1)'/><path d='M-4.887 15.766c-.06 0-.123.04-.123.102-.102 1.023.082 2.086.471 3.089a7.997 7.997 0 001.8 2.72A8.89 8.89 0 00.064 23.52a8.884 8.884 0 003.334.655 8.807 8.807 0 003.335-.655c1.064-.43 2.025-1.044 2.803-1.841a7.997 7.997 0 001.8-2.721 7.655 7.655 0 00.353-1.178 7.62 7.62 0 00.363 1.239 7.994 7.994 0 001.8 2.72 8.449 8.449 0 002.803 1.842 8.807 8.807 0 003.334.655 8.807 8.807 0 003.335-.655 8.89 8.89 0 002.803-1.841 7.711 7.711 0 001.8-2.721c.164-.389.266-.798.368-1.207v-1.984c-.06-.02-.102 0-.143.04-.9 1.78-2.086 3.15-3.518 4.092a8.773 8.773 0 01-4.665 1.412 8.624 8.624 0 01-4.665-1.391c-1.419-.913-2.615-2.269-3.493-4.045-.002-.023-.002-.045-.005-.067 0-.02-.02-.062-.06-.082-.062-.02-.144 0-.165.06-.88 1.8-2.086 3.172-3.518 4.093a8.476 8.476 0 01-4.665 1.41c-1.636 0-3.232-.47-4.664-1.39-1.432-.92-2.619-2.311-3.519-4.091-.02-.041-.06-.062-.102-.102z'  stroke-width='1' stroke='none' fill='hsla(258.5,59.4%,59.4%,1)'/><path d='M-11.553 2.432c-.062 0-.123.04-.123.102-.103 1.023.082 2.087.47 3.09a7.997 7.997 0 001.8 2.72 8.89 8.89 0 002.803 1.841 8.884 8.884 0 003.335.655 8.807 8.807 0 003.335-.655c1.063-.43 2.025-1.043 2.802-1.84a7.997 7.997 0 001.8-2.722 7.655 7.655 0 00.353-1.178 7.62 7.62 0 00.364 1.24 7.994 7.994 0 001.8 2.72 8.449 8.449 0 002.802 1.841 8.807 8.807 0 003.335.655 8.807 8.807 0 003.335-.655 8.89 8.89 0 002.802-1.84 7.711 7.711 0 001.801-2.722c.164-.388.266-.797.368-1.206V2.493c-.061-.02-.102 0-.143.04-.9 1.78-2.086 3.15-3.518 4.092a8.773 8.773 0 01-4.665 1.412 8.624 8.624 0 01-4.665-1.391C7.22 5.733 6.022 4.377 5.145 2.6l-.005-.067c0-.02-.02-.062-.06-.082-.062-.02-.145 0-.165.061-.88 1.8-2.086 3.171-3.518 4.092a8.476 8.476 0 01-4.665 1.411c-1.637 0-3.232-.47-4.664-1.39-1.432-.922-2.619-2.312-3.519-4.092-.02-.041-.061-.062-.102-.102z'  stroke-width='1' stroke='none' fill='hsla(339.6,82.2%,51.6%,1)'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+  }
+  
+  .card .back {
+    background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='25' height='25' patternTransform='scale(2) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0,0%,100%,1)'/><path d='M25 30a5 5 0 110-10 5 5 0 010 10zm0-25a5 5 0 110-10 5 5 0 010 10zM0 30a5 5 0 110-10 5 5 0 010 10zM0 5A5 5 0 110-5 5 5 0 010 5zm12.5 12.5a5 5 0 110-10 5 5 0 010 10z'  stroke-width='1' stroke='none' fill='hsla(174, 100%, 29%, 1)'/><path d='M0 15a2.5 2.5 0 110-5 2.5 2.5 0 010 5zm25 0a2.5 2.5 0 110-5 2.5 2.5 0 010 5zM12.5 2.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5zm0 25a2.5 2.5 0 110-5 2.5 2.5 0 010 5z'  stroke-width='1' stroke='none' fill='hsla(187, 100%, 42%, 1)'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
     background-position: center center;
     background-size: cover;
     backface-visibility: hidden;
-}
-.card .front{
+  }
+  
+  .card .front {
     transform: rotateY(180deg);
-}
+  }

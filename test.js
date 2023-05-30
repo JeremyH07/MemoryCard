@@ -6,15 +6,13 @@ let score = 0;
 
 document.querySelector(".score").textContent = score;
 
-fetch("./data/cards.json")
+fetch("https://drive.google.com/uc?export=download&id=1x_LejvtNzN0XIDo1FbJ5pF88gI82w_9C/view?usp=sharing")
   .then((res) => res.json())
   .then((data) => {
     cards = [...data];
     shuffleCards();
     generateCards();
   });
-
-
 
 function shuffleCards() {
   let currentIndex = cards.length,
@@ -32,20 +30,11 @@ function shuffleCards() {
 function generateCards() {
   for (let card of cards) {
     const cardElement = document.createElement("div");
-    if (card.name == card.question_reponse){
-        colorcard = "colorquiz"
-    }
-    else {
-
-        colorcard = "colorreponse"
-
-      }
-    
     cardElement.classList.add("card");
     cardElement.setAttribute("data-name", card.name);
     cardElement.innerHTML = `
       <div class="front">
-        <div class="intcard ${colorcard}">${card.question_reponse} </div>
+        <div class="intcard">${card.question_reponse} </div>
       </div>
       <div class="back"></div>
     `;
@@ -53,6 +42,7 @@ function generateCards() {
     cardElement.addEventListener("click", flipCard);
   }
 }
+
 function flipCard() {
   if (lockBoard) return;
   if (this === firstCard) return;
@@ -81,18 +71,14 @@ function checkForMatch() {
 function disableCards() {
   firstCard.removeEventListener("click", flipCard);
   secondCard.removeEventListener("click", flipCard);
-  document.getElementById("correctSound").play();
-  resetBoard();
 
-  if (document.querySelectorAll('.flipped').length === cards.length) {
-    document.getElementById("VictorySound").play();
-}}
+  resetBoard();
+}
 
 function unflipCards() {
   setTimeout(() => {
     firstCard.classList.remove("flipped");
     secondCard.classList.remove("flipped");
-    document.getElementById("incorrectSound").play();
     resetBoard();
   }, 1000);
 }
@@ -107,7 +93,4 @@ function restart() {
   resetBoard();
   shuffleCards();
   score = 0;
-  document.querySelector(".score").textContent = score;
-  gridContainer.innerHTML = "";
-  generateCards();
 }
